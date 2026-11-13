@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rift-offsec"
+version = "0.1.0"
+description = "Workspace de pentesting autorizado: recon, superficie de ataque y validacion segura"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "RIFT" }]
+dependencies = []
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Information Technology",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Security",
+]
+keywords = ["pentesting", "recon", "security", "authorized"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/liendomaho-wq/Elyra-Local-AI"
+Issues = "https://github.com/liendomaho-wq/Elyra-Local-AI/issues"
+
+[project.scripts]
+rift = "rift.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["rift*"]
+
+[tool.setuptools.package-data]
+"rift.range" = ["missions.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
